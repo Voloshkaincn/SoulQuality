@@ -1,0 +1,20 @@
+<svg id="_3.4" data-name="3.4" xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_36" data-name="Фигура 36" class="cls-1" d="M6.5,2.561L16.695,12.767m4.563,4.57,10.963,10.98"/>
+  <path id="Фигура_37" data-name="Фигура 37" class="cls-1" d="M27.545,33a27.613,27.613,0,0,0-6.124-15.95m-4.708-4.359C12.95,10.017,7.88,7.951,1.049,7.244"/>
+  <circle id="Эллипс_3" data-name="Эллипс 3" class="cls-2" cx="7" cy="3" r="2"/>
+  <circle id="Эллипс_3-2" data-name="Эллипс 3" class="cls-2" cx="32" cy="28" r="2"/>
+  <path id="Прямоугольник_12" data-name="Прямоугольник 12" class="cls-1" d="M18.973,10.795l4.247,4.254L18.973,19.3l-4.248-4.254Z"/>
+</svg>

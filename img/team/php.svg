@@ -1,0 +1,17 @@
+<svg id="кодер" xmlns="http://www.w3.org/2000/svg" width="42" height="33" viewBox="0 0 42 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_41" data-name="Фигура 41" class="cls-1" d="M12.975,7L1,16v1l11.975,9"/>
+  <path id="Фигура_41-2" data-name="Фигура 41" class="cls-1" d="M28.994,7L41,16v1L28.994,26"/>
+  <path id="Фигура_42" data-name="Фигура 42" class="cls-1" d="M25,1L18,32"/>
+</svg>

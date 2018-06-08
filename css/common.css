@@ -1,0 +1,1153 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Common~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    *, 
+    *:before, 
+    *:after{
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    img{
+        height: auto;
+        max-width: 100%;
+    }
+    figure {
+        position: relative;
+    }
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus{
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+    }
+    figure img, 
+    figure video, 
+    figure object, 
+    figure embed {
+        display:block;
+        max-width: 100%;
+    }
+    .clear:before,
+    .clear:after,
+    .container:before,
+    .container:after,
+    .wrapper:before,
+    .wrapper:after {
+        content: " ";
+        display: table;
+    }
+    .clear:after,
+    .container:after,
+    .wrapper:after
+     {
+        clear: both;
+    }
+    /* IE6/7 support */
+    .clear,
+    .container,
+    .wrapper {
+        *zoom: 1;
+    }
+    .vertical-middle{
+        position:absolute;
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .gorizontal-center{
+        position:absolute;
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .middle-center{
+        position:absolute;
+        left:50%;
+        top:50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+    @font-face{
+        font-family: "JReg";
+        src:url("../fonts/jaapokki-regular-webfont.woff");
+    }
+    @font-face{
+        font-family: "MProReg";
+        src:url("../fonts/MavenPro-Regular.woff");
+    }
+    body{
+        font: 100%/2em "MProReg", Helvetica, sans-serif;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Common~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span {
+        border-radius: 0%;
+        position: absolute;
+        z-index: 1;
+        height: 7px;
+        width: 7px;
+        border: 0;
+        background: transparent;
+        transition: .15s;
+        border: 1px solid #4c678e;
+        margin: 0;
+        top: 0;
+        left: 0;
+    }
+    #fp-nav ul li a:before{
+        width: 1px;
+        height: 13px;
+        background-color: #4c678e;
+        content: '';
+        display: block;
+        position: absolute;
+        top:-13px;
+        left:3px;
+    }
+    #fp-nav ul li a:after{
+        width: 1px;
+        height: 13px;
+        background-color: #4c678e;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom:-13px;
+        left:3px;
+    }
+    #fp-nav ul li:hover a span,
+    .fp-slidesNav ul li:hover a span {
+        width: 7px;
+        height: 7px;
+        margin: 0;
+    }
+    #fp-nav ul li a.active span,
+    #fp-nav ul li:hover a.active span{
+        height: 7px;
+        width: 7px;
+        border-radius: 0%;
+        margin: 0;
+        border: 1px solid #00ccff;
+    }
+    .fp-viewing-1stPage #fp-nav ul li a.active span,
+    .fp-viewing-1stPage #fp-nav ul li:hover a.active span,
+    .fp-viewing-2ndPage #fp-nav ul li a.active span,
+    .fp-viewing-2ndPage #fp-nav ul li:hover a.active span{
+        border: 1px solid #fff;
+    }
+    #fp-nav ul li a.active span:after,
+    #fp-nav ul li:hover a.active span:after,
+    #fp-nav ul li a.active span:before,
+    #fp-nav ul li:hover a.active span:before{
+        background-color: #fff;
+    }
+    #fp-nav ul li a.active:after,
+    #fp-nav ul li:hover a.active:after,
+    #fp-nav ul li a.active:before,
+    #fp-nav ul li:hover a.active:before{
+        background-color: #00ccff;
+        z-index: 2;
+    }
+    .fp-viewing-1stPage #fp-nav ul li a.active:after,
+    .fp-viewing-1stPage #fp-nav ul li:hover a.active:after,
+    .fp-viewing-1stPage #fp-nav ul li a.active:before,
+    .fp-viewing-1stPage #fp-nav ul li:hover a.active:before,
+    .fp-viewing-2ndPage #fp-nav ul li a.active:after,
+    .fp-viewing-2ndPage #fp-nav ul li:hover a.active:after,
+    .fp-viewing-2ndPage #fp-nav ul li a.active:before,
+    .fp-viewing-2ndPage #fp-nav ul li:hover a.active:before{
+        background-color: #fff;
+    }
+    #fp-nav ul li,
+    .fp-slidesNav ul li {
+        display: block;
+        width: 7px;
+        height: 7px;
+        position: relative;
+        margin: 0;
+        margin-bottom: 26px;
+    }
+    #fp-nav ul li a + .fp-tooltip {
+        position: absolute;
+        top: -14px;
+        color: #4c678e;
+        font-size: 12px;
+        font-family: 'JReg';
+        display: block;
+        opacity: 1;
+        width: auto;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        /*text-shadow: 1px 1px 1px rgba(62, 59, 61, 0.6);*/
+    }
+    #fp-nav ul li:hover .fp-tooltip,
+    #fp-nav.fp-show-active a.active+.fp-tooltip {
+        transition: color .3s ease-in;
+        width: auto;
+        opacity: 1;
+        color: #00ccff;
+    }
+    .fp-viewing-1stPage #fp-nav ul li:hover .fp-tooltip,
+    .fp-viewing-1stPage #fp-nav.fp-show-active a.active+.fp-tooltip,
+    .fp-viewing-2ndPage #fp-nav ul li:hover .fp-tooltip,
+    .fp-viewing-2ndPage #fp-nav.fp-show-active a.active+.fp-tooltip {
+        color: #fff;
+    }
+    #fp-nav{
+        z-index: 1;
+        width: 163px;
+        height: 100%;
+        -webkit-transition: ease 1s;
+        transition: ease 1s;
+    }
+    #fp-nav.hidden-menu{
+        left: -150px;
+    }
+    #fp-nav-2{
+        left: 17px;
+        position: fixed;
+        z-index: 100;
+        margin-top: -32px;
+        top: 50%;
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        width: 7px;
+        height: 198px;
+        margin-top: -99px;
+        z-index: 2;
+    }
+    #fp-nav:after {
+        content: '';
+        display: block;
+        width: 163px;
+        height: 100%;
+        position: absolute;
+        opacity: 1;
+        left: 0;
+        background: #fff;
+        -webkit-transition: ease 1s;
+        transition: ease 1s;
+        z-index: 1;
+        box-shadow: 1px 1px 7px 0px rgba(29, 20, 11, 0.29);
+    }
+    .fp-viewing-1stPage #fp-nav:after {
+        opacity: 0;
+        background: transparent;
+    }
+    .fp-viewing-1stPage #fp-nav.hidden-menu:after {
+        opacity: 1;
+        background: url('../img/menu-bg.jpg') no-repeat center;
+    }
+    .fp-viewing-2ndPage #fp-nav:after {
+        background: url('../img/menu-bg.jpg') no-repeat center;
+    }
+    #fp-nav ul li:last-child{
+        position: absolute;
+        top:50%;
+        right: -132px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        font-size: 0;
+        color: transparent;
+        width: 10px;
+        height: 39px;
+        border-left: 1px solid #575757;
+        margin-bottom: 0;
+        cursor: pointer;
+        -webkit-transition: ease 1s;
+        transition: ease 1s;
+    }
+    #fp-nav ul li:last-child:hover{
+        border-left: 1px solid #00ccff;
+    }
+    #fp-nav ul li:last-child a,
+    #fp-nav ul li:last-child .fp-tooltip.left{
+        display: none;
+    }
+    #fp-nav ul li:last-child:before{
+        content: '';
+        position: absolute;
+        right: 0;
+        top:50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        color: transparent;
+        font-size: 0;
+        display: block;
+        opacity: 1;
+        width: 6px;
+        height: 8px;
+        cursor: pointer;
+        border-right: 6px solid #575757;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        -webkit-transition: ease 1s;
+        transition: ease 1s;
+    }
+    #fp-nav.hidden-menu ul li:last-child:before{
+        border-left: 6px solid #575757;
+        border-right: 6px solid transparent;
+        right: -6px;
+    }
+    #fp-nav.hidden-menu ul li:last-child:hover:before{
+        border-left: 6px solid #00ccff;
+        border-right: 6px solid transparent;
+    }
+    #fp-nav ul li:last-child:hover:before{
+        border-right: 6px solid #00ccff;
+    }
+    .fp-viewing-1stPage #fp-nav ul li:last-child{
+        right: 130px;
+    }
+    .fp-viewing-1stPage #fp-nav.hidden-menu ul li:last-child{
+        right: -132px;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~FIRST SCREEN HOME~~~~~~~~~~~~~~~~~~~~~~~*/
+    .home{
+        background: url('../img/home/bg.jpg') no-repeat center;
+    }
+    .home .container,
+    .home .row,
+    .home .col-xs-12{
+        height: 100%;
+    }
+    .contact-us-button{
+        font-family: "JReg";
+        font-size: 18px;
+        line-height: 48px;
+        letter-spacing: 0.3em;
+        color: #fff;
+        text-transform: uppercase;
+        border: 3px solid #fff;
+        width: 285px;
+        height: 54px;
+        background: rgba(30, 50, 72, .44);
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        transition:.5s;
+        -webkit-transition:.5s;
+        text-shadow: 1px 1px 1px rgba(62, 59, 61, 0.6);
+    }
+    .contact-us-button:hover{
+        background: rgba(255, 255, 255, 1);
+        color: rgb(30, 50, 72);
+        letter-spacing: 0.4em;
+    }
+    .header-title{
+        background: transparent url('../img/home/bg-for-title.png') no-repeat center;
+        height: 118px;
+        padding-top: 35px;
+        margin-bottom: 30px;
+    }
+    .header-title p{
+        font-family: "JReg";
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 1px rgba(62, 59, 61, 0.6);
+    }
+    .header-title h1{
+        font-family: "MProReg";
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        color: #fff;
+        text-align: center;
+        margin:0 auto;
+    }
+    .header-title h1 span{
+        font-family: "JReg";
+    }
+    .home-logo{
+        position: absolute;
+        top: 40px;
+        left: 20px;
+    }
+    .logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .logo-text{
+        margin-left: 18px;
+    }
+    .logo-text p{
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    .logo-text p:first-child{
+        color: #fff;
+        letter-spacing: .3em;
+        text-transform: uppercase;
+        font-family: "JReg";
+    }
+    .logo-text p:last-child{
+        color: #00e3ff;
+        letter-spacing: .33em;
+        font-family: "MProReg";
+    }
+    .home-content{
+        position:absolute;
+        left:50%;
+        top:50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        width: 100%;
+    }
+
+    @media (max-width: 1200px){
+        
+    }
+    @media (max-width: 991px){
+        
+    }
+    @media (max-width: 767px){
+        
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~FIRST SCREEN HOME~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~SECOND SCREEN SERVICES~~~~~~~~~~~~~~~~~~~~*/
+    .services{
+        background: url('../img/services/bg.jpg') no-repeat center;
+    }
+    .services-title{
+        text-transform: uppercase;
+        font-size: 40px;
+        letter-spacing: .2em;
+        text-align: center;
+        color: #646464;
+        margin-bottom: 60px;
+        font-family: "JReg";
+        line-height: 80px;
+        border-top: 7px solid #fff;
+        border-bottom: 7px solid #fff;
+        border-right: 7px solid #fff;
+        width: 380px;
+        margin-left: 50%;
+    }
+    .services-slider-container{
+        width: 970px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .services-slider-container:after{
+        display: block;
+        content: '';
+        width: 795px;
+        height: 111px;
+        position: absolute;
+        bottom: -30px;
+        left: -70px;
+        background: url('../img/services/sq.png') no-repeat center;
+    }
+    .services-slider{
+        width: 100%;
+        background: #fff;
+        padding: 0 25px;
+    }
+    .service-item{
+        height: 400px;
+        padding: 80px 25px 0;
+        text-align: center;
+    }
+    .service-item .object-container{
+        margin-bottom: 30px;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .services-slider button{
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        background: rgba(0, 186, 255, .5);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        top: 50%;
+        margin-top: -100px;
+        color: #fff;
+    }
+    .services-slider .slick-prev {
+        left: 0px;
+    }
+    .services-slider .slick-next {
+        right: -230px;
+    }
+    p.service-item-title{
+        font-family: "JReg";
+        font-size: 12px;
+        letter-spacing: .2em;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: #35373e;
+        margin-bottom: 12px;
+    }
+    .services-slider .slick-list{
+        overflow: hidden;
+    }
+    p.service-item-text{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .05em;
+        color: #acafba;
+    }
+    a.services-contact-button{
+        float: right;
+        border: 3px solid #484848;
+        font-family: "JReg";
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        color: #484848;
+        transition: .5s;
+        -webkit-transition: .5s;
+        width: 200px;
+        height: 38px;
+        text-align: center;
+        line-height: 34px;
+        margin-top: 15px;
+    }
+    a.services-contact-button:hover {
+        background: #484848;
+        color: #f2f2f2;
+        letter-spacing: 0.4em;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~SECOND SCREEN SERVICES~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~THIRD SCREEN PORTFOLIO~~~~~~~~~~~~~~~~~~~~~~*/
+    .portfolio{
+        background: url('../img/portfolio/bg.jpg') no-repeat center;
+    }
+    .portfolio-title{
+        font-family: "JReg";
+        font-size: 40px;
+        line-height: 1em;
+        letter-spacing: .2em;
+        text-align: center;
+        text-transform: uppercase;
+        color: #3c3c3c;
+        margin-bottom: 15px;
+    }
+    a.view-more-projects{
+        font-family: "JReg";
+        font-size: 12px;
+        letter-spacing: .2em;
+        color: #484848;
+        line-height: 32px;
+        height: 38px;
+        border: 3px solid #484848;
+        text-align: center;
+        width: 210px;
+        text-transform: uppercase;
+        margin: 48px auto 0;
+        display: block;
+        -webkit-transition: .5s;
+        transition: .5s;
+    }
+    a.view-more-projects:hover{
+        background: rgba(72, 72, 72, 1);
+        color: rgb(255, 255, 255);
+        letter-spacing: 0.3em;
+    }
+    .slick-slide{
+        outline: none;
+    }
+    .portfolio-slider{
+        width: 840px;
+        margin: 0 auto;
+    }
+    .project{
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .project:before{
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(0, 0, 0, .75);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+    .project:hover:before{
+        top: -100%;
+        bottom: 100%;
+    }
+    .project-information{
+        position: absolute;
+        padding: 20px 15px 0;
+        height: 100px;
+        right: 0;
+        left: 0;
+        bottom: -100px;
+        -webkit-transition: .3s;
+        transition: .3s;
+        background: #fff;
+    }
+    .project:hover .project-information{
+        bottom: 0;
+    }
+    .project-name{
+        font-family: "JReg";
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .2em;
+        text-align: center;
+        text-transform: uppercase;
+        color: #35373e;
+    }
+    .project-description{
+        font-family: "MPRoReg";
+        font-size: 14px;
+        letter-spacing: .05em;
+        color: #acafba;
+        text-align: center;
+    }
+    .portfolio p{
+        font-size: 14px;
+        letter-spacing: .05em;
+        color: #7f7f7f;
+        width: 370px;
+        margin: 40px auto 0;
+        text-align: center;
+    }
+    .portfolio-slider .slick-prev,
+    .portfolio-slider .slick-next{
+        top: calc(100% + 10px);
+    }
+    .portfolio-slider .slick-prev{
+        left: 130px;
+    }
+    .portfolio-slider .slick-next{
+        right: 130px;
+    }
+    .portfolio-buttons{
+        position: relative;
+        width: 580px;
+        margin: 0 auto 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .portfolio-buttons button{
+        position: relative;
+    }
+    @media (max-height: 700px){
+        
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~THIRD SCREEN PORTFOLIO~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~4th SCREEN OUR TEAM~~~~~~~~~~~~~~~~~~~~~~*/
+    .our-team{
+        background: url('../img/team/bg.jpg') no-repeat center;
+    }
+    .team-title{
+        text-transform: uppercase;
+        font-size: 40px;
+        line-height: 1em;
+        letter-spacing: .2em;
+        text-align: center;
+        color: #646464;
+        margin-bottom: 60px;
+        font-family: "JReg";
+    }
+    .team-member{
+        height: 480px;
+        position: relative;
+        overflow: visible;
+        opacity: 0;
+        -webkit-transition: .3s;
+                transition: .3s;
+    }
+    .team-member.slick-active{
+        opacity: 1;
+    }
+    .team-member img.member-img{
+        position: absolute;
+        left:50%;
+        top:50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+    .rectangle{
+        width: 250px;
+        height: 215px;
+        box-shadow: -4px 3px 9px 0px rgba(62, 59, 61, 0.18); 
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        top: 160px;
+    }
+    .rectangle:before{
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: #0cf;
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .member-name{
+        font-family: "JReg";
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 1em;
+        letter-spacing: .2em;
+        text-align: center;
+        width: 100%;
+        color: #35373e;
+        position: absolute;
+        bottom: 0;
+    }
+    .skills{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .skills-button{
+        width: 60px;
+        height: 60px;
+        background-color: #3e3e3e;
+        position: relative;
+        z-index: 3;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .skills-button img,
+    .skills-button object{
+        position: absolute;
+        left:50%;
+        top:50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+    .prof-skills{
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        font-family: "MProReg";
+        font-size: 16px;
+        height: 60px;
+        line-height: 60px;
+        letter-spacing: .2em;
+        color: #828383;
+        overflow: hidden;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .skill{
+        width: 25px;
+        height: 25px;
+        background-position: 0 0;
+        display: inline-block;
+        vertical-align: middle;
+        opacity: 0;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .skill + .skill{
+        margin-left: 10px;
+    }
+    .skill:hover{
+        background-position: 0 100%;
+    }
+    .skill-ps{
+        background-image: url('../img/team/skill-ps.jpg');
+    }
+    .skill-ai{
+        background-image: url('../img/team/skill-ai.jpg');
+    }
+    .skill-mu{
+        background-image: url('../img/team/skill-mu.jpg');
+    }
+    .member-social{
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .member-social-text span{
+        display: block;
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        font-family: "MProReg";
+        font-size: 16px;
+        letter-spacing: .2em;
+        color: #0cf;
+        top: 50px;
+        left: 5px;
+        width: 170px;
+        position: relative;
+    }
+    .member-social-text{
+        height: 0;
+        width: 44px;
+        margin-left: 6px;
+        border-left: 1px solid #ebebeb;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .social-grey{
+        width: 50px;
+        background-color: #d0d0d0;
+        padding: 20px 0;
+        display: none;
+    }
+    .social-grey a i{
+        font-size: 18px;
+        color: #434343;
+        -webkit-transition: .4s;
+                transition: .4s;
+    }
+    .social-grey a:nth-child(3) i{
+        font-size: 22px;
+    }
+    .social-grey a:hover i{
+        color: #0cf;
+    }
+    .social-grey a {
+        display: block;
+        text-align: center;
+    }
+    .social-grey a + a{
+        margin-top: 30px;
+    }
+    .team-member:hover .rectangle:before{
+        width: 250px;
+        height: 215px;
+    }
+    .team-member:hover .skills{
+        width: 100%;
+        height: 100%;
+    }
+    .team-member:hover .skills-button{
+        background-color: #0cf;
+    }
+    .team-member:hover .prof-skills{
+        opacity: 1;
+        padding-left: 75px;
+    }
+    .team-member:hover .skill{
+        opacity: 1;
+    }
+    .team-member:hover .member-social{
+        opacity: 1;
+    }
+    .team-member:hover .member-social-text{
+        height: 215px;
+    }
+    .team-member:hover .social-grey{
+        display: block;
+    }
+    .team-slider .slick-prev,
+    .team-slider .slick-next{
+        top: calc(100% + 60px);
+    }
+    .team-slider .slick-prev{
+        left: 0;
+    }
+    .team-slider .slick-next{
+        right: 0;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~4th SCREEN OUR TEAM~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~5th SCREEN ADVANTAGES~~~~~~~~~~~~~~~~~~~~~~*/
+    .advantages{
+        background: url('../img/advantages/bg.jpg') no-repeat top center;
+    }
+    .advantages .container,
+    .advantages .row {
+        height: 100%;
+    }
+    .adv-title{
+        width: 503px;
+        height: 89px;
+        background: url('../img/advantages/adv-title.png') no-repeat top center;
+        text-align: center;
+        line-height: 81px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 36px;
+        font-family: "JReg";
+        letter-spacing: 0.2em;
+        margin-top: 68px;
+        margin-left: 145px;
+        margin-bottom: 50px;
+    }
+    .adv-line{
+        margin-bottom: 70px;
+    }
+    .adv-item{
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        width: 230px;
+    }
+    .adv-item + .adv-item{
+        margin-left: 30px;
+    }
+    .adv-img-container{
+        width: 63px;
+        height: 38px;
+        text-align: center;
+        line-height: 36px;
+        margin: 0 auto 25px;
+    }
+    .adv-item-title{
+        font-family: "JReg";
+        font-size: 12px;
+        line-height: 1em;
+        letter-spacing: 0.2em;
+        color: #35373e;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .adv-item-text{
+        font-family: "MProReg";
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.05em;
+        color: #acafba;
+        margin-bottom: 10px;
+    }
+    a.adv-item-more{
+        display: block;
+        width: 90px;
+        margin: 0 auto;
+        color: #666;
+        font-family: "JReg";
+        font-size: 10px;
+        line-height: 1em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+    a.adv-item-more:hover{
+        width: 100px;
+        letter-spacing: 0.3em;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~5th SCREEN ADVANTAGES~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~5th SCREEN CONTACTS~~~~~~~~~~~~~~~~~~~~~~~*/
+    .contacts-title{
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: "JReg";
+        font-size: 40px;
+        line-height: 1em;
+        letter-spacing: 0.2em;
+        color: #35373e;
+    }
+    .contacts-description{
+        text-align: center;
+        margin-bottom: 80px;
+        font-family: "MProReg";
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.05em;
+        color: #acafba;
+    }
+    .contacts-line{
+        margin-bottom: 40px;
+    }
+    .contacts-subtitle{
+        font-family: "JReg";
+        font-size: 13px;
+        line-height: 1em;
+        letter-spacing: .2em;
+        color: #35373e;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .contacts-text{
+        font-family: "MProReg";
+        font-size: 15px;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        color: #acafba;
+    }
+    .contacts-text a{
+        font-family: "MProReg";
+        font-size: 15px;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        color: #acafba;
+    }
+    .contacts-text a:hover{
+        border-bottom: 1px solid #acafba;
+    }
+    form input{
+        display: inline-block;
+        vertical-align: middle;
+        width: 358px;
+        line-height: 45px;
+        outline: none;
+        padding: 0 20px;
+        background: #fff;
+        color: #acafba;
+        font-family: "MProReg";
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        border: 3px solid rgb(238, 238, 240);
+    }
+    form .form-line input:first-child{
+        margin-right: 30px;
+    }
+    textarea{
+        resize: none;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 70px;
+        outline: none;
+        padding: 15px 20px;
+        background: #fff;
+        border: 3px solid rgb(238, 238, 240);
+        color: #acafba;
+        font-size: 13px;
+    }
+    .form-line{
+        margin-bottom: 30px;
+    }
+    input[type="submit"]{
+        background: #fff;
+        width: 200px;
+        height: 40px;
+        line-height: 36px;
+        border: 3px solid #484848;
+        display: block;
+        font-size: 12px;
+        font-family: "JReg";
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #484848;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+    input[type="submit"]:hover{
+        color: #fff;
+        background: #484848;
+        letter-spacing: 0.3em;
+    }
+    ::-webkit-input-placeholder {color: #acafba;}
+    ::-moz-placeholder          {color: #acafba;}
+    :-moz-placeholder           {color: #acafba;}
+    :-ms-input-placeholder      {color: #acafba;}
+    form input::-webkit-input-placeholder       
+    {text-indent: 0px;   transition: text-indent 0.5s ease;}
+    form input::-moz-placeholder                
+    {text-indent: 0px;   transition: text-indsent 0.5s ease;}
+    form input:-moz-placeholder                 
+    {text-indent: 0px;   transition: text-indent 0.5s ease;}
+    form input:-ms-input-placeholder            
+    {text-indent: 0px;   transition: text-indent 0.5s ease;}
+    form input:focus::-webkit-input-placeholder 
+    {text-indent: 1000px; transition: text-indent 0.5s ease;}
+    form input:focus::-moz-placeholder          
+    {text-indent: 1000px; transition: text-indent 0.5s ease;}
+    form input:focus:-moz-placeholder           
+    {text-indent: 1000px; transition: text-indent 0.5s ease;}
+    form input:focus:-ms-input-placeholder      
+    {text-indent: 1000px; transition: text-indent 0.5s ease;}
+    textarea::-webkit-input-placeholder {
+        opacity: 1;
+        transition:.5s;
+    }
+    textarea:focus::-webkit-input-placeholder {
+        opacity: 0;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~5th SCREEN CONTACTS~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~6th SCREEN FOOTER~~~~~~~~~~~~~~~~~~~~~~~~*/
+    .footer{
+        background: url('../img/footer/bg.jpg') no-repeat top center;
+        max-height: 103px;
+        padding-bottom: 10px;
+    }
+    ul.footer-menu{
+        margin-bottom: 0;
+        line-height: 85px;
+    }
+    .footer .logo{
+        margin-top: 20px;
+    }
+    ul.footer-menu li{
+        float: left;
+        list-style: none;
+    }
+    ul.footer-menu li a{
+        font-family: "JReg";
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        -webkit-transition: color .3s;
+                transition: color .3s;
+    }
+    ul.footer-menu li a:hover{
+        color: #00e3ff;
+    }
+    ul.footer-menu li + li{
+        margin-left: 70px;
+    }
+    p.copyrights{
+        font-family: "MProReg";
+        font-size: 12px;
+        color: #e0e0e0;
+        letter-spacing: .05em;
+        line-height: 1em;
+        text-align: left;
+        margin-bottom: 0;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~6th SCREEN FOOTER~~~~~~~~~~~~~~~~~~~~~~~~*/

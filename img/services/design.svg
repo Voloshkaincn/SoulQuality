@@ -1,0 +1,54 @@
+<svg id="_3" data-name="3" xmlns="http://www.w3.org/2000/svg" width="125" height="121" viewBox="0 0 125 121">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #4f4f4f;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-6, .cls-7 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #4f4f4f;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #0cf;
+      }
+
+      .cls-6, .cls-7 {
+        stroke-linejoin: round;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Группа_27" data-name="Группа 27">
+    <path id="Фигура_37" data-name="Фигура 37" class="cls-1" d="M62.433,12L32,70A32.937,32.937,0,0,1,46,98H62.433M62,12L92,70A33.028,33.028,0,0,0,78.2,98H62"/>
+    <path id="Фигура_38" data-name="Фигура 38" class="cls-2" d="M62.433,13V51"/>
+    <path id="Фигура_39" data-name="Фигура 39" class="cls-1" d="M40,71A27.57,27.57,0,0,1,50,93"/>
+    <path id="Прямоугольник_скругл._углы_1" data-name="Прямоугольник, скругл. углы 1" class="cls-1" d="M44,98H81a3,3,0,0,1,3,3v4a3,3,0,0,1-3,3H44a3,3,0,0,1-3-3v-4A3,3,0,0,1,44,98Z"/>
+    <path id="Прямоугольник_13" data-name="Прямоугольник 13" class="cls-1" d="M35,107.812H90v11.375H35V107.812Z"/>
+    <circle id="Эллипс_3" data-name="Эллипс 3" class="cls-3" cx="62" cy="56" r="4.906"/>
+  </g>
+  <g id="Группа_28" data-name="Группа 28">
+    <path id="Фигура_36" data-name="Фигура 36" class="cls-4" d="M10,6H56.439M67.066,6H115"/>
+    <circle id="Эллипс_3-2" data-name="Эллипс 3" class="cls-5" cx="119" cy="6" r="4.906"/>
+    <circle id="Эллипс_3-3" data-name="Эллипс 3" class="cls-5" cx="6" cy="6" r="4.906"/>
+    <path id="Прямоугольник_12" data-name="Прямоугольник 12" class="cls-6" d="M113,62h10V72H113V62Z"/>
+    <path id="Прямоугольник_12-2" data-name="Прямоугольник 12" class="cls-6" d="M1,62H11V72H1V62Z"/>
+    <path id="Фигура_40" data-name="Фигура 40" class="cls-4" d="M6,61S7.662,7,62.433,7,118,61,118,61"/>
+    <path id="Прямоугольник_12-3" data-name="Прямоугольник 12" class="cls-7" d="M57,1H67V11H57V1Z"/>
+  </g>
+</svg>

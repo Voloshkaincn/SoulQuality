@@ -1,0 +1,16 @@
+<svg id="Группа_30" data-name="Группа 30" xmlns="http://www.w3.org/2000/svg" width="26" height="34" viewBox="0 0 26 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_40" data-name="Фигура 40" class="cls-1" d="M1,17a3.685,3.685,0,0,0,4-4V3A2.08,2.08,0,0,1,7,1"/>
+  <path id="Фигура_40-2" data-name="Фигура 40" class="cls-1" d="M1.092,17a3.645,3.645,0,0,1,3.938,4V31A2.07,2.07,0,0,0,7,33"/>
+  <path id="Фигура_40-3" data-name="Фигура 40" class="cls-1" d="M25.908,17a3.645,3.645,0,0,1-3.938-4V3A2.07,2.07,0,0,0,20,1"/>
+  <path id="Фигура_40-4" data-name="Фигура 40" class="cls-1" d="M25.817,17s-3.878-.306-3.878,4V31A2.06,2.06,0,0,1,20,33"/>
+</svg>
