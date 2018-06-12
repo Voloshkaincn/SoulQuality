@@ -1,0 +1,21 @@
+//@import '../libs/bootstrap.min.css';
+@import '../libs/fancybox.css';
+@import '../libs/fullpage.css';
+@import '../libs/slick.css';
+@import '../libs/slick-theme.css';
+
+@import '../libs/bootstrap4/scss/bootstrap-grid.scss';
+@import '../libs/bootstrap4/scss/utilities/_spacing.scss';
+@import '../libs/bootstrap4/scss/mixins/_text-truncate.scss ';
+@import '../libs/bootstrap4/scss/mixins/_text-emphasis.scss ';
+@import '../libs/bootstrap4/scss/mixins/_hover.scss ';
+@import '../libs/bootstrap4/scss/mixins/_text-hide.scss ';
+@import '../libs/bootstrap4/scss/utilities/_text.scss';
+
+
+//in the fullpage.js i deactivate line of code, where the fp-nav margin-top is set. 838 line
+//and that's why, these styles are added
+#fp-nav.left {
+	top: 0;
+	margin-top: 0;
+}
